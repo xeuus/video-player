@@ -1,0 +1,133 @@
+.video-player {
+  position: relative;
+  width: 640px;
+  height: 480px;
+  overflow: hidden;
+}
+.video-player video {
+  position: absolute;
+  object-fit: contain;
+  background: #eee;
+  width: 100%;
+  height: 100%;
+}
+.video-player .controls-wrapper {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  justify-content: flex-end;
+  opacity: 1;
+  transition: opacity 0.2s ease-in-out;
+}
+.video-player .controls-wrapper:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0, black 0, rgba(0, 0, 0, 0.5) 100%);
+}
+.video-player .controls-wrapper .controls {
+  display: flex;
+  padding: 0 24px;
+}
+.video-player .controls-wrapper .range-slider-wrapper {
+  display: flex;
+  padding: 0 24px;
+  flex: 1 1 auto;
+}
+.video-player .controls-wrapper .control-item {
+  position: relative;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 auto;
+  cursor: pointer;
+}
+.video-player .controls-wrapper .control-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+.video-player .controls-wrapper .control-item:active {
+  background: rgba(255, 255, 255, 0.25);
+}
+.video-player .controls-wrapper .control-item:after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 0;
+}
+.video-player .controls-wrapper .control-item.state-pause:after {
+  width: 12px;
+  height: 12px;
+  border: 4px solid #fff;
+  border-top: none;
+  border-bottom: none;
+}
+.video-player .controls-wrapper .control-item.state-play:after {
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 8px solid #fff;
+}
+.video-player .controls-wrapper .control-item.state-stop:after {
+  background: #fff;
+  width: 12px;
+  height: 12px;
+}
+.video-player:hover .controls-wrapper {
+  opacity: 1;
+}
+
+.range-slider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+.range-slider:before {
+  position: absolute;
+  left: 0;
+  content: "";
+  width: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  height: 4px;
+}
+.range-slider .slider-range {
+  position: absolute;
+  left: 0;
+  width: 25%;
+  background: #b84b44;
+  height: 4px;
+}
+.range-slider .slider-thumb {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 25%;
+  width: 56px;
+  margin-left: -28px;
+  height: 56px;
+}
+.range-slider .slider-thumb:before {
+  position: absolute;
+  content: "";
+  width: 12px;
+  background: #b84b44;
+  height: 12px;
+  border-radius: 100%;
+}
+
+/*# sourceMappingURL=video-player.css.map */

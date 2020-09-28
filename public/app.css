@@ -1,0 +1,16 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px;
+}
+
+/*# sourceMappingURL=app.css.map */
